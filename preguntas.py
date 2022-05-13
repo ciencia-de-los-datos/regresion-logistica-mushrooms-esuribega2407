@@ -64,21 +64,29 @@ def pregunta_01():
     En esta función se realiza la carga de datos.
     """
     # Lea el archivo `mushrooms.csv` y asignelo al DataFrame `df`
-    df = ____
+    #df = ____
+    df = pd.read_csv(
+        "mushrooms.csv",
+        sep=',',
+        thousands=None,
+        decimal='.')
 
     # Remueva la columna `veil-type` del DataFrame `df`.
     # Esta columna tiene un valor constante y no sirve para la detección de hongos.
-    ____.____(____)
+    #____.____(____)
+    df.pop('veil_type')
 
     # Asigne la columna `type` a la variable `y`.
-    ____ = ____
+    #____ = ____
 
+    y = df['type']
     # Asigne una copia del dataframe `df` a la variable `X`.
-    ____ = ____.____(____)
+   # ____ = ____.____(____)
+    X = df.copy()
 
     # Remueva la columna `type` del DataFrame `X`.
-    ____.____(____)
-
+    #____.____(____)
+    X.pop('type')
     # Retorne `X` y `y`
     return X, y
 
@@ -89,7 +97,9 @@ def pregunta_02():
     """
 
     # Importe train_test_split
-    from ____ import ____
+    #from ____ import ____
+
+    from sklearn.model_selection import train_test_split
 
     # Cargue los datos de ejemplo y asigne los resultados a `X` y `y`.
     X, y = pregunta_01()
