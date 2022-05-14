@@ -57,7 +57,7 @@ La información contenida en la muestra es la siguiente:
 """
 
 import pandas as pd
-from daal4py.sklearn.linear_model import LogisticRegression
+
 
 
 def pregunta_01():
